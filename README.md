@@ -1,1 +1,4 @@
-"# Лабораторные работы по предмету Архитектура и дизайн ПО ## Студент: Кленечева Анастасия ## Группа: 241-327" 
+"# 241-327_Klenecheva" 
+"## Laboratory works on Software Architecture and Design" 
+"## Student: Anastasia Klenecheva" 
+"## Group: 241-327" 
