@@ -12,7 +12,10 @@ https://docs.djangoproject.com/en/6.0/ref/settings/
 
 from pathlib import Path
 
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
+#Path(__file__) — путь к текущему файлу
+#.resolve() — делает путь абсолютным
+#.parent.parent — поднимается на 2 уровня вверх (к корню проекта)
+#BASE_DIR — корневая папка проекта
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
@@ -23,34 +26,39 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-zk6npygkeq0ga-)bir00zdb#-d-7zpp6$x&8=7w8e601gd2e^^'
 
 # SECURITY WARNING: don't run with debug turned on in production!
+# Режим отладки — True при разработке, False на сервере. При True показывает подробные ошибки.
 DEBUG = True
 
+#Разрешенные хосты — список доменов, где может работать сайт. На разработке пустой
 ALLOWED_HOSTS = []
 
 
 # Application definition
 
 INSTALLED_APPS = [
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
+    'django.contrib.admin', #админ-панель
+    'django.contrib.auth', #аутентификация 
+    'django.contrib.contenttypes', #работа с типами данных 
+    'django.contrib.sessions', #сессии пользователей 
+    'django.contrib.messages', #сообщения для пользователей
+    'django.contrib.staticfiles', #статические файлы
+    'mainapp', #наше приложение
 ]
 
+#промежуточные слои
 MIDDLEWARE = [
-    'django.middleware.security.SecurityMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
-    'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.middleware.security.SecurityMiddleware', #безопаность
+    'django.contrib.sessions.middleware.SessionMiddleware', #сессии 
+    'django.middleware.common.CommonMiddleware', #общие функции
+    'django.middleware.csrf.CsrfViewMiddleware', #защита от CSRF
+    'django.contrib.auth.middleware.AuthenticationMiddleware', #авторизация
+    'django.contrib.messages.middleware.MessageMiddleware', #сообщения
+    'django.middleware.clickjacking.XFrameOptionsMiddleware', #защита от clickjacking
 ]
 
-ROOT_URLCONF = 'lab1.urls'
+ROOT_URLCONF = 'lab1.urls' #указывает, какой файл отвечает за маршруты
 
+#настройка html-шаблонов
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -74,8 +82,12 @@ WSGI_APPLICATION = 'lab1.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'lab1_db',                    
+        'USER': 'django',                      
+        'PASSWORD': '2NevjFoQisyVaV',        
+        'HOST': 'localhost',
+        'PORT': '5433',                        
     }
 }
 
@@ -102,13 +114,13 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/6.0/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'en-us' #язык
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'UTC' #часовой пояс 
 
-USE_I18N = True
+USE_I18N = True #включить переводы
 
-USE_TZ = True
+USE_TZ = True #использовать временные зоны
 
 
 # Static files (CSS, JavaScript, Images)
