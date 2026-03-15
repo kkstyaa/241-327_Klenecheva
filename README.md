@@ -1,4 +1,4 @@
-\#241-327\_Klenecheva
+# 241-327_Klenecheva
 
 ## Laboratory works on Software Architecture and Design
 
