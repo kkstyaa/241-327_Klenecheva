@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.messages', #сообщения для пользователей
     'django.contrib.staticfiles', #статические файлы
     'mainapp', #наше приложение
+    'rest_framework',
 ]
 
 #промежуточные слои

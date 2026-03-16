@@ -1,0 +1,45 @@
+@hostname = http://localhost:8000
+
+### 1. GET список всех книг (LIST)
+GET {{hostname}}/books
+Content-Type: application/json
+
+### 2. GET одну книгу с id=1 (RETRIEVE)
+GET {{hostname}}/books/1
+Content-Type: application/json
+
+### 3. POST создать новую книгу (CREATE)
+POST {{hostname}}/books
+Content-Type: application/json
+
+{
+    "title": "Мастер и Маргарита",
+    "author": "Булгаков М.А.",
+    "published_date": "1967-01-01",
+    "is_available": true,
+    "isbn": "9781234567890"
+}
+
+### 4. PUT полностью обновить книгу с id=1 UPDATE
+PUT {{hostname}}/books/1
+Content-Type: application/json
+
+{
+    "title": "Война и мир (обновленное издание)",
+    "author": "Толстой Л.Н.",
+    "published_date": "1869-01-01",
+    "is_available": false,
+    "isbn": "9780987654321"
+}
+
+### 5. PATCH частично обновить книгу 
+PATCH {{hostname}}/books/2
+Content-Type: application/json
+
+{
+    "is_available": false
+}
+
+### 6. DELETE удалить книгу
+DELETE {{hostname}}/books/3
+Content-Type: application/json
