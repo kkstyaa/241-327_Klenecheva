@@ -6,6 +6,9 @@ from django.db import transaction
 
 def gentestdata():
     with transaction.atomic():
+
+        Book.objects.all().delete()
+        
         for i in range(1000):
             book = Book()
             book.published_date = datetime.date(

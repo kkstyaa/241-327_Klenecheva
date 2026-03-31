@@ -17,7 +17,7 @@ Content-Type: application/json
     "author": "Булгаков М.А.",
     "published_date": "1967-01-01",
     "is_available": true,
-    "isbn": "9781234567890"
+    "isbn": "9781230567890"
 }
 
 ### 4. PUT полностью обновить книгу с id=1 UPDATE
@@ -41,5 +41,5 @@ Content-Type: application/json
 }
 
 ### 6. DELETE удалить книгу
-DELETE {{hostname}}/books/3
+DELETE {{hostname}}/books/25
 Content-Type: application/json
