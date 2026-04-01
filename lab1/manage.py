@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-"""Django's command-line utility for administrative tasks."""
 import os #работа с ОС
 import sys #доступ к аргументам КС
 

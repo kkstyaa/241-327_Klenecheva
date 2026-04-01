@@ -5,7 +5,7 @@ GET {{hostname}}/books
 Content-Type: application/json
 
 ### 2. GET одну книгу с id=1 (RETRIEVE)
-GET {{hostname}}/books/1
+GET {{hostname}}/books/23
 Content-Type: application/json
 
 ### 3. POST создать новую книгу (CREATE)

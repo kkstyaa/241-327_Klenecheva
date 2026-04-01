@@ -2,12 +2,12 @@ import random
 import string
 import datetime
 from .models import Book
-from django.db import transaction
+from django.db import transaction, connection
 
 def gentestdata():
+    with connection.cursor() as cursor:
+        cursor.execute("TRUNCATE TABLE mainapp_book RESTART IDENTITY;")
     with transaction.atomic():
-
-        Book.objects.all().delete()
         
         for i in range(1000):
             book = Book()
