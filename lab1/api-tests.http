@@ -1,11 +1,11 @@
-@hostname = http://localhost:8000
+@hostname = http://localhost:443
 
 ### 1. GET список всех книг (LIST)
 GET {{hostname}}/books
 Content-Type: application/json
 
 ### 2. GET одну книгу с id=1 (RETRIEVE)
-GET {{hostname}}/books/23
+GET {{hostname}}/books/1
 Content-Type: application/json
 
 ### 3. POST создать новую книгу (CREATE)
